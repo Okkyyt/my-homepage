@@ -1,12 +1,13 @@
-'use client'
-import React from 'react';
+"use client";
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 interface Detail {
   label: string;
@@ -26,107 +27,127 @@ const ProfileCard: React.FC<{ profile: ProfileType }> = ({ profile }) => {
         <tbody>
           {profile.details.map((detail, index) => (
             <tr key={index} className="border border-gray-200">
-              <td className="p-2 border border-gray-200 break-words text-lg">{detail.label}</td>
-              <td className="p-2 border border-gray-200 break-words text-lg">{detail.value}</td>
+              <td className="p-2 border border-gray-200 break-words text-lg">
+                {detail.label}
+              </td>
+              <td className="p-2 border border-gray-200 break-words text-lg">
+                {detail.value}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
-}
+};
 
 export default function Home() {
-  const xHandle = '/your_x_handle'; // 適切なハンドルに変更してください
-  const githubHandle = '/your_github_handle'; // 適切なハンドルに変更してください
+  const xHandle = "/your_x_handle"; // 適切なハンドルに変更してください
+  const githubHandle = "/your_github_handle"; // 適切なハンドルに変更してください
 
   const profiles = [
     {
-      title: 'main',
+      title: "main",
       details: [
-        { label: '名前', value: 'Okki-' },
-        { label: '年齢', value: '19' },
-        { label: '出身地', value: '神戸' },
-        { label: '趣味', value: 'プログラミング,ゲーム' }
-      ]
+        { label: "名前", value: "Okki-" },
+        { label: "年齢", value: "19" },
+        { label: "出身地", value: "神戸" },
+        { label: "趣味", value: "プログラミング,ゲーム" },
+      ],
     },
     {
-      title: 'programing',
+      title: "programing",
       details: [
-        { label: '技術', value: 'Python,JS,Go' },
-        { label: '好きな言語', value: 'Python' },
-        { label: '興味のある技術', value: 'GraphQL,Nextjs' },
-        { label: 'やりたいこと', value: 'ハッカソン,Kaggle' },
-      ]
+        { label: "技術", value: "Python,JS,Go" },
+        { label: "好きな言語", value: "Python" },
+        { label: "興味のある技術", value: "GraphQL,Nextjs" },
+        { label: "やりたいこと", value: "ハッカソン,Kaggle" },
+      ],
     },
     {
-      title: 'free time',
+      title: "free time",
       details: [
-        { label: 'すること', value: '寝る,ゲーム,配信見る' },
-        { label: '睡眠時間', value: '夜2時間,昼6時間' },
-        { label: '好きなゲーム', value: 'FPS,LoL,スマホゲー(学マス)' },
-        { label: '推し', value: 'あくシオ,ここフレ' },
-      ]
+        { label: "すること", value: "寝る,ゲーム,配信見る" },
+        { label: "睡眠時間", value: "夜2時間,昼6時間" },
+        { label: "好きなゲーム", value: "FPS,LoL,スマホゲー(学マス)" },
+        { label: "推し", value: "あくシオ,ここフレ" },
+      ],
     },
   ];
 
   return (
     <main className="flex flex-col items-center justify-between font-sans w-full">
       {/* Title */}
-      <div className="mt-20 mb-20 w-full text-center">
+      <div className="text-center mt-20 mb-20 w-full">
         <h1 className="text-6xl">Okki-です!!これからよろしく!!</h1>
         <h2 className="text-4xl mt-4">Python勉強中&技術大好き</h2>
       </div>
       {/* Link */}
-      <div className="flex flex-col w-full items-center text-center">
+      <div className="flex flex-col text-center items-center mb-20 w-full">
         <h3 className="text-5xl">my account</h3>
         <div className="mt-4 text-4xl w-80">
           <Link
-            className="border-solid border-2 p-2 rounded-md border-gray-300 hover:border-blue-400 flex justify-center"
+            className="group border-solid border-2 p-2 rounded-md border-gray-300 hover:border-blue-400 flex justify-center transition-all duration-300 hover:w-100"
             href={`https://x.com${xHandle}`}
             target="_blank"
             rel="noopener noreferrer"
           >
+            <Image
+              src="/images/x_logo.jpg"
+              alt="x_logo"
+              width={50}
+              height={50}
+              className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
             <p>X &rarr;</p>
           </Link>
           <Link
-            className="border-solid border-2 p-2 rounded-md border-gray-300 hover:border-blue-400 flex justify-center"
+            className="group border-solid border-2 p-2 rounded-md border-gray-300 hover:border-blue-400 flex justify-center transition-all duration-300 hover:w-100"
             href={`https://github.com${githubHandle}`}
             target="_blank"
             rel="noopener noreferrer"
           >
+            <Image
+              src="/images/github_logo.jpg"
+              alt="github_logo"
+              width={50}
+              height={50}
+              className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
             <p>GitHub &rarr;</p>
           </Link>
         </div>
       </div>
       {/* profile */}
-      <h3 className="text-5xl text-center mt-20 w-full">profile</h3>
-      <div className="mt-3 w-full relative">
-        <Swiper
-          modules={[Navigation, Pagination]}
-          loop={false}
-          speed={1500}
-          slidesPerView={3} // Adjust this to show part of the next slide
-          centeredSlides={true} // Center the slide when it comes into view
-          spaceBetween={30}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          pagination={{
-            el: '.swiper-pagination',
-            clickable: true,
-          }}
-        >
-          {profiles.map((profile, index) => (
-            <SwiperSlide key={index} className="flex justify-center">
-              <ProfileCard profile={profile} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="swiper-button-next text-black w-8 h-8 absolute right-2 top-1/2 transform -translate-y-1/2"></div>
-        <div className="swiper-button-prev text-black w-8 h-8 absolute left-2 top-1/2 transform -translate-y-1/2"></div>
-        <div className="swiper-pagination"></div>
+      <div className="text-center mb-20 w-full">
+        <h3 className="text-5xl">profile</h3>
+        <div className="mt-3 relative">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            loop={false}
+            speed={1500}
+            slidesPerView={3} // Adjust this to show part of the next slide
+            centeredSlides={true} // Center the slide when it comes into view
+            spaceBetween={30}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+            }}
+          >
+            {profiles.map((profile, index) => (
+              <SwiperSlide key={index} className="flex justify-center">
+                <ProfileCard profile={profile} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="swiper-button-next text-black w-8 h-8 absolute right-2 top-1/2 transform -translate-y-1/2"></div>
+          <div className="swiper-button-prev text-black w-8 h-8 absolute left-2 top-1/2 transform -translate-y-1/2"></div>
+          <div className="swiper-pagination"></div>
+        </div>
       </div>
     </main>
   );
