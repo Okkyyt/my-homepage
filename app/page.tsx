@@ -19,6 +19,36 @@ interface ProfileType {
   details: Detail[];
 }
 
+const profiles = [
+  {
+    title: "main",
+    details: [
+      { label: "名前", value: "Okki-" },
+      { label: "年齢", value: "19" },
+      { label: "出身地", value: "神戸" },
+      { label: "趣味", value: "プログラミング,ゲーム" },
+    ],
+  },
+  {
+    title: "programing",
+    details: [
+      { label: "技術", value: "Python,JS,Go" },
+      { label: "好きな言語", value: "Python" },
+      { label: "興味のある技術", value: "GraphQL,Nextjs" },
+      { label: "やりたいこと", value: "ハッカソン,Kaggle" },
+    ],
+  },
+  {
+    title: "free time",
+    details: [
+      { label: "すること", value: "寝る,ゲーム,配信見る" },
+      { label: "睡眠時間", value: "夜2時間,昼6時間" },
+      { label: "好きなゲーム", value: "FPS,LoL,スマホゲー(学マス)" },
+      { label: "推し", value: "あくシオ,ここフレ" },
+    ],
+  },
+];
+
 const ProfileCard: React.FC<{ profile: ProfileType }> = ({ profile }) => {
   return (
     <div className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden p-4 m-4 h-80">
@@ -45,49 +75,21 @@ export default function Home() {
   const xHandle = "/your_x_handle"; // 適切なハンドルに変更してください
   const githubHandle = "/your_github_handle"; // 適切なハンドルに変更してください
 
-  const profiles = [
-    {
-      title: "main",
-      details: [
-        { label: "名前", value: "Okki-" },
-        { label: "年齢", value: "19" },
-        { label: "出身地", value: "神戸" },
-        { label: "趣味", value: "プログラミング,ゲーム" },
-      ],
-    },
-    {
-      title: "programing",
-      details: [
-        { label: "技術", value: "Python,JS,Go" },
-        { label: "好きな言語", value: "Python" },
-        { label: "興味のある技術", value: "GraphQL,Nextjs" },
-        { label: "やりたいこと", value: "ハッカソン,Kaggle" },
-      ],
-    },
-    {
-      title: "free time",
-      details: [
-        { label: "すること", value: "寝る,ゲーム,配信見る" },
-        { label: "睡眠時間", value: "夜2時間,昼6時間" },
-        { label: "好きなゲーム", value: "FPS,LoL,スマホゲー(学マス)" },
-        { label: "推し", value: "あくシオ,ここフレ" },
-      ],
-    },
-  ];
-
   return (
     <main className="flex flex-col items-center justify-between font-sans w-full">
       {/* Title */}
       <div className="text-center mt-20 mb-20 w-full">
         <h1 className="text-6xl">Okki-です!!これからよろしく!!</h1>
-        <h2 className="text-4xl mt-4">Python勉強中&技術大好き</h2>
+        <h2 className="text-4xl mt-4">Python&React勉強中!!</h2>
       </div>
       {/* Link */}
-      <div className="flex flex-col text-center items-center mb-20 w-full">
-        <h3 className="text-5xl">my account</h3>
-        <div className="mt-4 text-4xl w-80">
+      <div className="flex flex-col items-center mb-20 w-full">
+        <h3 className="text-5xl text-center font-bold text-gray-800">
+          My Account
+        </h3>
+        <div className="mt-8 text-4xl w-1/2">
           <Link
-            className="group border-solid border-2 p-2 rounded-md border-gray-300 hover:border-blue-400 flex justify-center transition-all duration-300 hover:w-100"
+            className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
             href={`https://x.com${xHandle}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -97,12 +99,14 @@ export default function Home() {
               alt="x_logo"
               width={50}
               height={50}
-              className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             />
-            <p>X &rarr;</p>
+            <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
+              X &rarr;
+            </p>
           </Link>
           <Link
-            className="group border-solid border-2 p-2 rounded-md border-gray-300 hover:border-blue-400 flex justify-center transition-all duration-300 hover:w-100"
+            className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
             href={`https://github.com${githubHandle}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -112,21 +116,24 @@ export default function Home() {
               alt="github_logo"
               width={50}
               height={50}
-              className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             />
-            <p>GitHub &rarr;</p>
+            <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
+              GitHub &rarr;
+            </p>
           </Link>
         </div>
       </div>
+
       {/* profile */}
       <div className="text-center mb-20 w-full">
-        <h3 className="text-5xl">profile</h3>
+        <h3 className="text-5xl font-bold text-gray-800">profile</h3>
         <div className="mt-3 relative">
           <Swiper
             modules={[Navigation, Pagination]}
             loop={false}
             speed={1500}
-            slidesPerView={3} // Adjust this to show part of the next slide
+            slidesPerView={2} // Adjust this to show part of the next slide
             centeredSlides={true} // Center the slide when it comes into view
             spaceBetween={30}
             navigation={{
