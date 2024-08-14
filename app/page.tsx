@@ -9,6 +9,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import SampleSVG from "../public/svg/sample-logo.svg";
+
 interface Detail {
   label: string;
   value: string;
@@ -72,22 +74,30 @@ const ProfileCard: React.FC<{ profile: ProfileType }> = ({ profile }) => {
 };
 
 export default function Home() {
+  console.log(SampleSVG);
   const xHandle = "/your_x_handle"; // 適切なハンドルに変更してください
   const githubHandle = "/your_github_handle"; // 適切なハンドルに変更してください
 
   return (
     <main className="flex flex-col items-center justify-between font-sans w-full">
       {/* Title */}
-      <div className="text-center mt-20 mb-20 w-full">
+      <div className="text-center mt-20 mb-20 w-full  font-bold text-gray-800 relative z-10">
         <h1 className="text-6xl">Okki-です!!これからよろしく!!</h1>
         <h2 className="text-4xl mt-4">Python&React勉強中!!</h2>
       </div>
       {/* Link */}
       <div className="flex flex-col items-center mb-20 w-full">
-        <h3 className="text-5xl text-center font-bold text-gray-800">
+        <Image
+          src={SampleSVG}
+          alt="React Logo"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-50"
+        />
+        <h3 className="text-5xl text-center font-bold text-gray-800 relative z-10">
           My Account
         </h3>
-        <div className="mt-8 text-4xl w-1/2">
+        <div className="mt-8 text-4xl w-1/2 relative z-10">
           <Link
             className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
             href={`https://x.com${xHandle}`}
