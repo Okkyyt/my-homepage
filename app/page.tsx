@@ -79,59 +79,63 @@ export default function Home() {
   const githubHandle = "/your_github_handle"; // 適切なハンドルに変更してください
 
   return (
-    <main className="flex flex-col items-center justify-between font-sans w-full">
+    <main className="flex flex-col items-center justify-between font-sans w-full overflow-hidden">
       {/* Title */}
-      <div className="text-center mt-20 mb-20 w-full  font-bold text-gray-800 relative z-10">
+      <div className="text-center mt-20 mb-20 w-full font-bold text-gray-800 relative z-10">
         <h1 className="text-6xl">Okki-です!!これからよろしく!!</h1>
         <h2 className="text-4xl mt-4">Python&React勉強中!!</h2>
       </div>
       {/* Link */}
-      <div className="flex flex-col items-center mb-20 w-full">
-        <Image
-          src={SampleSVG}
-          alt="React Logo"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-        />
-        <h3 className="text-5xl text-center font-bold text-gray-800 relative z-10">
-          My Account
-        </h3>
-        <div className="mt-8 text-4xl w-1/2 relative z-10">
-          <Link
-            className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
-            href={`https://x.com${xHandle}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src="/images/x_logo.jpg"
-              alt="x_logo"
-              width={50}
-              height={50}
-              className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-            <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
-              X &rarr;
-            </p>
-          </Link>
-          <Link
-            className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
-            href={`https://github.com${githubHandle}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src="/images/github_logo.jpg"
-              alt="github_logo"
-              width={50}
-              height={50}
-              className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-            <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
-              GitHub &rarr;
-            </p>
-          </Link>
+      <div className="flex flex-col items-center mb-20 w-full relative">
+        <div className="relative w-full max-w-full h-[300px] overflow-hidden group">
+          <Image
+            src={SampleSVG}
+            alt="React Logo"
+            layout="fill"
+            objectFit="cover"
+            className="absolute inset-0 opacity-0 transition-all duration-500 transform translate-x-full translate-y-full group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0"
+          />
+          <div className="flex flex-col items-center w-full relative">
+            <h3 className="text-5xl text-center font-bold text-gray-800 relative z-10">
+              My Account
+            </h3>
+            <div className="mt-8 text-4xl w-1/2 relative z-10">
+              <Link
+                className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
+                href={`https://x.com${xHandle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/x_logo.jpg"
+                  alt="x_logo"
+                  width={50}
+                  height={50}
+                  className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
+                  X &rarr;
+                </p>
+              </Link>
+              <Link
+                className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
+                href={`https://github.com${githubHandle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/github_logo.jpg"
+                  alt="github_logo"
+                  width={50}
+                  height={50}
+                  className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
+                  GitHub &rarr;
+                </p>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
