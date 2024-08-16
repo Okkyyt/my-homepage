@@ -86,8 +86,8 @@ export default function Home() {
         <h2 className="text-4xl mt-4">Python&React勉強中!!</h2>
       </div>
       {/* Link */}
-      <div className="flex flex-col items-center mb-20 w-full relative">
-        <div className="relative w-full max-w-full h-[300px] overflow-hidden group">
+      <div className="group flex flex-col items-center mb-20 w-full relative">
+        <div className="relative w-full max-w-full h-[300px] overflow-hidden">
           <Image
             src={SampleSVG}
             alt="React Logo"
@@ -101,7 +101,7 @@ export default function Home() {
             </h3>
             <div className="mt-8 text-4xl w-1/2 relative z-10">
               <Link
-                className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
+                className="group/link border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
                 href={`https://x.com${xHandle}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -111,14 +111,14 @@ export default function Home() {
                   alt="x_logo"
                   width={50}
                   height={50}
-                  className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="mr-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"
                 />
-                <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
+                <p className="font-semibold text-gray-700 group-hover/link:text-blue-500 transition-colors duration-300">
                   X &rarr;
                 </p>
               </Link>
               <Link
-                className="group border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
+                className="group/link border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
                 href={`https://github.com${githubHandle}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -128,9 +128,9 @@ export default function Home() {
                   alt="github_logo"
                   width={50}
                   height={50}
-                  className="mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="mr-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"
                 />
-                <p className="font-semibold text-gray-700 group-hover:text-blue-500 transition-colors duration-300">
+                <p className="font-semibold text-gray-700 group-hover/link:text-blue-500 transition-colors duration-300">
                   GitHub &rarr;
                 </p>
               </Link>
