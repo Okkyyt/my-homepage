@@ -9,7 +9,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import SampleSVG from "../public/svg/sample-logo.svg";
+import SampleSVG from "../public/svg/blue-rod.svg";
+import CircleSVG from "../public/svg/red-circle.svg";
 
 interface Detail {
   label: string;
@@ -85,6 +86,7 @@ export default function Home() {
         <h1 className="text-6xl">Okki-です!!これからよろしく!!</h1>
         <h2 className="text-4xl mt-4">Python&React勉強中!!</h2>
       </div>
+
       {/* Link */}
       <div className="group flex flex-col items-center mb-20 w-full relative">
         <div className="relative w-full max-w-full h-[300px] overflow-hidden">
@@ -140,9 +142,31 @@ export default function Home() {
       </div>
 
       {/* profile */}
-      <div className="text-center mb-20 w-full">
-        <h3 className="text-5xl font-bold text-gray-800">profile</h3>
-        <div className="mt-3 relative">
+      <div className="group text-center mb-20 w-full relative">
+        <div
+          className="
+        absolute 
+        inset-0 
+        opacity-0
+        transform 
+        scale-100
+        transition-all 
+        duration-500 
+        group-hover:opacity-100 
+        group-hover:scale-150
+      "
+        >
+          <Image
+            src={CircleSVG}
+            alt="red_Circle"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+        <h3 className="text-5xl font-bold text-gray-800 relative z-10">
+          profile
+        </h3>
+        <div className="mt-3 relative z-10">
           <Swiper
             modules={[Navigation, Pagination]}
             loop={false}
