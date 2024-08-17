@@ -54,7 +54,7 @@ const profiles = [
 
 const ProfileCard: React.FC<{ profile: ProfileType }> = ({ profile }) => {
   return (
-    <div className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden p-4 m-4 h-80">
+    <div className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden p-4 m-4 h-auto sm:h-80 text-gray-700">
       <h3 className="text-2xl font-bold mb-4 text-center">{profile.title}</h3>
       <table className="border-collapse border border-gray-200 table-fixed w-full">
         <tbody>
@@ -79,11 +79,11 @@ export default function Home() {
   const githubHandle = process.env.NEXT_PUBLIC_GITHUB_URL;
 
   return (
-    <main className="bg-gray-300 flex flex-col items-center justify-between font-sans w-full overflow-hidden">
+    <main className="bg-black flex flex-col items-center justify-between font-sans w-full overflow-hidden text-gray-300">
       {/* Title */}
-      <div className="text-center mt-10 sm:mt-20 mb-10 sm:mb-20 w-full font-bold text-gray-800 relative z-10">
+      <div className="text-center mt-10 sm:mt-20 mb-10 sm:mb-20 w-full font-bold relative z-10">
         <h1 className="text-4xl sm:text-6xl">
-          Okki-です!!<span>これからよろしく!!</span>
+          Okki-です!!<span className="block sm:inline">これからよろしく!!</span>
         </h1>
         <h2 className="text-2xl sm:text-4xl mt-4">Python&React勉強中!!</h2>
       </div>
@@ -99,7 +99,7 @@ export default function Home() {
             className="absolute inset-0 opacity-0 transition-all duration-500 transform translate-x-full translate-y-full group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0"
           />
           <div className="flex flex-col items-center w-full relative">
-            <h3 className="text-3xl sm:text-5xl text-center font-bold text-gray-800 relative z-10">
+            <h3 className="text-3xl sm:text-5xl text-center font-bold relative z-10">
               My Account
             </h3>
             <div className="mt-4 sm:mt-8 text-2xl sm:text-4xl w-3/4 sm:w-1/2 relative z-10">
@@ -116,7 +116,7 @@ export default function Home() {
                   height={40}
                   className="mr-2 sm:mr-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"
                 />
-                <p className="font-semibold text-gray-700 group-hover/link:text-blue-500 transition-colors duration-300">
+                <p className="font-semibold group-hover/link:text-blue-500 transition-colors duration-300">
                   X &rarr;
                 </p>
               </Link>
@@ -133,7 +133,7 @@ export default function Home() {
                   height={40}
                   className="mr-2 sm:mr-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"
                 />
-                <p className="font-semibold text-gray-700 group-hover/link:text-blue-500 transition-colors duration-300">
+                <p className="font-semibold group-hover/link:text-blue-500 transition-colors duration-300">
                   GitHub &rarr;
                 </p>
               </Link>
@@ -164,8 +164,8 @@ export default function Home() {
             objectFit="contain"
           />
         </div>
-        <h3 className="text-3xl sm:text-5xl font-bold text-gray-800 relative z-10">
-          profile
+        <h3 className="text-3xl sm:text-5xl font-bold relative z-10">
+          Profile
         </h3>
         <div className="mt-3 relative z-10">
           <Swiper
