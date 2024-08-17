@@ -79,7 +79,7 @@ export default function Home() {
   const githubHandle = process.env.NEXT_PUBLIC_GITHUB_URL;
 
   return (
-    <main className="bg-white-300 flex flex-col items-center justify-between font-sans w-full overflow-hidden">
+    <main className="bg-gray-300 flex flex-col items-center justify-between font-sans w-full overflow-hidden">
       {/* Title */}
       <div className="text-center mt-10 sm:mt-20 mb-10 sm:mb-20 w-full font-bold text-gray-800 relative z-10">
         <h1 className="text-4xl sm:text-6xl">
@@ -112,8 +112,8 @@ export default function Home() {
                 <Image
                   src="/images/x_logo.jpg"
                   alt="x_logo"
-                  width={30}
-                  height={30}
+                  width={40}
+                  height={40}
                   className="mr-2 sm:mr-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"
                 />
                 <p className="font-semibold text-gray-700 group-hover/link:text-blue-500 transition-colors duration-300">
@@ -129,8 +129,8 @@ export default function Home() {
                 <Image
                   src="/images/github_logo.jpg"
                   alt="github_logo"
-                  width={30}
-                  height={30}
+                  width={40}
+                  height={40}
                   className="mr-2 sm:mr-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300"
                 />
                 <p className="font-semibold text-gray-700 group-hover/link:text-blue-500 transition-colors duration-300">
@@ -172,12 +172,12 @@ export default function Home() {
             modules={[Navigation, Pagination]}
             loop={false}
             speed={1500}
-            slidesPerView={1} 
+            slidesPerView={1}
             centeredSlides={true}
-            spaceBetween={10} 
+            spaceBetween={10}
             breakpoints={{
               640: {
-                slidesPerView: 2, 
+                slidesPerView: 2,
                 spaceBetween: 30,
               },
             }}
