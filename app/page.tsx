@@ -76,9 +76,8 @@ const ProfileCard: React.FC<{ profile: ProfileType }> = ({ profile }) => {
 
 export default function Home() {
   console.log(SampleSVG);
-  const xHandle = "/your_x_handle"; // 適切なハンドルに変更してください
-  const githubHandle = "/your_github_handle"; // 適切なハンドルに変更してください
-
+  const xHandle = process.env.NEXT_PUBLIC_X_URL;
+  const githubHandle = process.env.NEXT_PUBLIC_GITHUB_URL;
   return (
     <main className="flex flex-col items-center justify-between font-sans w-full overflow-hidden">
       {/* Title */}
@@ -104,7 +103,7 @@ export default function Home() {
             <div className="mt-8 text-4xl w-1/2 relative z-10">
               <Link
                 className="group/link border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
-                href={`https://x.com${xHandle}`}
+                href={`https://x.com/${xHandle}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -121,7 +120,7 @@ export default function Home() {
               </Link>
               <Link
                 className="group/link border-solid border-2 p-4 rounded-lg border-gray-300 hover:border-blue-500 flex transition-all hover:bg-blue-50 hover:shadow-lg"
-                href={`https://github.com${githubHandle}`}
+                href={`https://github.com/${githubHandle}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
