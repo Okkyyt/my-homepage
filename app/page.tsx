@@ -79,7 +79,7 @@ export default function Home() {
   const githubHandle = process.env.NEXT_PUBLIC_GITHUB_URL;
 
   return (
-    <main className="flex flex-col items-center justify-between font-sans w-full overflow-hidden">
+    <main className="bg-white-300 flex flex-col items-center justify-between font-sans w-full overflow-hidden">
       {/* Title */}
       <div className="text-center mt-10 sm:mt-20 mb-10 sm:mb-20 w-full font-bold text-gray-800 relative z-10">
         <h1 className="text-4xl sm:text-6xl">
