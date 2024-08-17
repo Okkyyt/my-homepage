@@ -54,9 +54,9 @@ const profiles = [
 
 const ProfileCard: React.FC<{ profile: ProfileType }> = ({ profile }) => {
   return (
-    <div className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden p-4 m-4 h-auto sm:h-80 text-gray-700">
+    <div className="bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden p-4 m-4 min-h-[320px] sm:min-h-[400px] text-gray-700 flex flex-col">
       <h3 className="text-2xl font-bold mb-4 text-center">{profile.title}</h3>
-      <table className="border-collapse border border-gray-200 table-fixed w-full">
+      <table className="border-collapse border border-gray-200 table-fixed w-full flex-grow">
         <tbody>
           {profile.details.map((detail, index) => (
             <tr key={index} className="border border-gray-200">
